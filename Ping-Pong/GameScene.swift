@@ -33,7 +33,6 @@ class GameScene: SKScene {
         bottomLbl = self.childNode(withName: "bottomLbl") as! SKLabelNode
         whoWon = self.childNode(withName: "whoWon") as! SKLabelNode
         
-//        ball.position.y = (self.frame.height / 2)
         main.position.y = (-self.frame.height / 2) + 100
         enemy.position.y = (self.frame.height / 2) - 100
         
@@ -49,16 +48,6 @@ class GameScene: SKScene {
         self.physicsBody = border
         
         whoWon.isHidden = true
-        
-//        let backTexture: SKTexture! = SKTexture(imageNamed: "clear.png")
-//        let backTextureSelected: SKTexture! = SKTexture(imageNamed: "clear.png")
-//        let backBtn = FTButtonNode(normalTexture: backTexture, selectedTexture: backTextureSelected, disabledTexture: backTexture)
-//        backBtn.setButtonAction(target: self, triggerEvent: .TouchUp, action: "backBtnTap:")
-//        backBtn.size = CGSize(width: 30, height: 30)
-//        backBtn.position = CGPoint(x: (-self.frame.width / 2) + 20, y: (self.frame.height / 2) - 20)
-//        backBtn.zPosition = 1
-//        backBtn.name = "backBtn"
-//        self.addChild(backBtn)
         
         startGame()
     }
