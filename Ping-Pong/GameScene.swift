@@ -33,15 +33,16 @@ class GameScene: SKScene {
         bottomLbl = self.childNode(withName: "bottomLbl") as! SKLabelNode
         whoWon = self.childNode(withName: "whoWon") as! SKLabelNode
         
-        ball.position.y = (self.frame.height / 2)
+//        ball.position.y = (self.frame.height / 2)
         main.position.y = (-self.frame.height / 2) + 100
         enemy.position.y = (self.frame.height / 2) - 100
+        
         bottomLbl.position.y = (-self.frame.height / 2) + 40
         topLbl.position.y = (self.frame.height / 2) - 40
+        
         bottomLbl.position.x = (-self.frame.width / 2) + 40
         topLbl.position.x = (self.frame.width / 2) - 40
-        whoWon.position.y = (self.frame.height / 2)
-        
+                
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         border.friction = 0
         border.restitution = 1
@@ -78,18 +79,14 @@ class GameScene: SKScene {
     }
 
     func startGame() {
+        
         getIMUData()
+
         score = [0,0]
         topLbl.text = "\(score[0])"
         bottomLbl.text = "\(score[1])"
         
         switch currentGameType {
-            case 20:
-                ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
-                break
-            case 21:
-                ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
-                break
             case 11:
                 ball.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 10))
                 break
@@ -99,6 +96,12 @@ class GameScene: SKScene {
             case 13:
                 ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
                 break
+            case 20:
+                ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
+                break
+            case 21:
+                ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
+                break
             default:
                 break
         }
@@ -107,17 +110,11 @@ class GameScene: SKScene {
     func addScore(playerWhoWon: SKSpriteNode) {
         ball.position = CGPoint(x: 0, y: 0)
         ball.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-        
+
         if playerWhoWon == main {
             score[0] += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                switch currentGameType {
-                   case 20:
-                        self.ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
-                        break
-                   case 21:
-                        self.ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
-                        break
                    case 11:
                         self.ball.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 10))
                         break
@@ -127,6 +124,12 @@ class GameScene: SKScene {
                    case 13:
                         self.ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
                         break
+                   case 20:
+                        self.ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
+                        break
+                   case 21:
+                        self.ball.physicsBody?.applyImpulse(CGVector(dx: 15, dy: 15))
+                        break
                    default:
                         break
                 }
@@ -135,12 +138,6 @@ class GameScene: SKScene {
             score[1] += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                switch currentGameType {
-                   case 20:
-                        self.ball.physicsBody?.applyImpulse(CGVector(dx: -15, dy: -15))
-                        break
-                   case 21:
-                        self.ball.physicsBody?.applyImpulse(CGVector(dx: -15, dy: -15))
-                        break
                    case 11:
                         self.ball.physicsBody?.applyImpulse(CGVector(dx: -10, dy: -10))
                         break
@@ -149,6 +146,12 @@ class GameScene: SKScene {
                         break
                    case 13:
                         self.ball.physicsBody?.applyImpulse(CGVector(dx: -20, dy: -20))
+                        break
+                   case 20:
+                        self.ball.physicsBody?.applyImpulse(CGVector(dx: -15, dy: -15))
+                        break
+                   case 21:
+                        self.ball.physicsBody?.applyImpulse(CGVector(dx: -15, dy: -15))
                         break
                    default:
                         break
@@ -159,33 +162,35 @@ class GameScene: SKScene {
         topLbl.text = "\(score[0])"
         bottomLbl.text = "\(score[1])"
         
-        if score[0] == 3 || score[1] == 3 {
-            if score[0] == 3 {
-                if currentGameType == 0 {
-                    whoWon.text = "Player 1 Won"
-                } else {
-                    whoWon.text = "You Won"
-                }
-            }
-            if score[1] == 3 {
-                if currentGameType == 0 {
-                    whoWon.text = "Player 2 Won"
-                } else {
-                    whoWon.text = "Enemy Won"
-                }
-            }
+        if score[0] == 5 || score[1] == 5 {
             ball.isHidden = true
             whoWon.isHidden = false
             ball.position = CGPoint(x: 0, y: 0)
-            ball.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
+//            currentGameType = 0
+            scene?.view?.isPaused = true
+            if currentGameType == 20 || currentGameType == 21 {
+                if score[0] == 5 {
+                    whoWon.text = "Player 1 Won"
+                } else {
+                    whoWon.text = "Player 2 Won"
+                }
+            } else {
+                if score[0] == 5 {
+                    whoWon.text = "You Won"
+                } else {
+                    whoWon.text = "Computer Won"
+                }
+            }
         }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             
-            if currentGameType == 0 {
+            if currentGameType == 20 || currentGameType == 21 {
                 if location.y > 0 {
                     enemy.run(SKAction.moveTo(x: location.x, duration: 0))
                 }
@@ -202,7 +207,7 @@ class GameScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             
-            if currentGameType == 0 {
+            if currentGameType == 20 || currentGameType == 21 {
                 if location.y > 0 {
                     enemy.run(SKAction.moveTo(x: location.x, duration: 0))
                 }
@@ -217,10 +222,6 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         switch currentGameType {
-            case 20:
-                break
-            case 21:
-                break
             case 11:
                 enemy.run(SKAction.moveTo(x: ball.position.x, duration: 1.3))
                 break
@@ -230,13 +231,17 @@ class GameScene: SKScene {
             case 13:
                 enemy.run(SKAction.moveTo(x: ball.position.x, duration: 0.7))
                 break
+            case 20:
+                break
+            case 21:
+                break
             default:
                 break
         }
         
-        if ball.position.y <= main.position.y - 30 {
+        if ball.position.y < 0 && ball.position.y < main.position.y - 30 {
             addScore(playerWhoWon: enemy)
-        } else if ball.position.y >= enemy.position.y + 30 {
+        } else if ball.position.y > 0 && ball.position.y > enemy.position.y + 30 {
             addScore(playerWhoWon: main)
         }
     }

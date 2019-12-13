@@ -11,14 +11,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    @IBAction func player2(_ sender: Any) {
-        moveToGame(game: 20)
-    }
-    
-    @IBAction func player2Bluetooth(_ sender: Any) {
-        moveToGame(game: 21)
-    }
-    
+   
     @IBAction func easy(_ sender: Any) {
         moveToGame(game: 11)
     }
@@ -31,6 +24,14 @@ class MenuViewController: UIViewController {
         moveToGame(game: 13)
     }
     
+    @IBAction func player2(_ sender: Any) {
+        moveToGame(game: 20)
+    }
+       
+    @IBAction func player2Bluetooth(_ sender: Any) {
+        moveToGame(game: 21)
+    }
+       
     func moveToGame(game: Int) {
         currentGameType = game
         performSegue(withIdentifier: "toGameVC", sender: self)
