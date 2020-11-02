@@ -116,7 +116,7 @@ class FTButtonNode: SKSpriteNode {
         }
         
         let touch: AnyObject! = touches.first
-        let touchLocation = touch.location(in: super.self())
+        let touchLocation = touch.location(in: super.self)
         
         if (frame.contains(touchLocation)) {
             isSelected = true
@@ -134,7 +134,7 @@ class FTButtonNode: SKSpriteNode {
         
         if (targetTouchUpInside != nil && targetTouchUpInside!.responds(to: actionTouchUpInside!)) {
             let touch: AnyObject! = touches.first
-            let touchLocation = touch.location(in: super.self())
+            let touchLocation = touch.location(in: super.self)
             
             if (frame.contains(touchLocation) ) {
                 UIApplication.shared.sendAction(actionTouchUpInside!, to: targetTouchUpInside, from: self, for: nil)

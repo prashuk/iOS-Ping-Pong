@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M7E-v2-Y9L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M7E-v2-Y9L">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,12 +31,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backWall" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-KT-6SN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backWall" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-KT-6SN">
+                                <rect key="frame" x="0.0" y="-10" width="414" height="906"/>
                                 <color key="backgroundColor" red="0.30350759630000002" green="0.44380936030000001" blue="0.53799444439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gr-gM-kas">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gr-gM-kas">
                                 <rect key="frame" x="99.5" y="198" width="215" height="30"/>
                                 <color key="backgroundColor" red="0.30350759630000002" green="0.44380936030000001" blue="0.53799444439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -48,7 +48,7 @@
                                     <action selector="player2:" destination="Y2F-8o-uxx" eventType="touchUpInside" id="H9M-Y0-QIN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWk-QH-veQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWk-QH-veQ">
                                 <rect key="frame" x="99.5" y="306" width="215" height="30"/>
                                 <color key="backgroundColor" red="0.30350759630000002" green="0.44380936030000001" blue="0.53799444439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,7 +57,7 @@
                                     <action selector="easy:" destination="Y2F-8o-uxx" eventType="touchUpInside" id="3xR-2P-Du9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxe-1e-r4C">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxe-1e-r4C">
                                 <rect key="frame" x="99.5" y="356" width="215" height="30"/>
                                 <color key="backgroundColor" red="0.30350759630000002" green="0.44380936030000001" blue="0.53799444439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,7 +66,7 @@
                                     <action selector="medium:" destination="Y2F-8o-uxx" eventType="touchUpInside" id="qSq-Oa-zFs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXe-ei-sIm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXe-ei-sIm">
                                 <rect key="frame" x="99.5" y="406" width="215" height="30"/>
                                 <color key="backgroundColor" red="0.30350759630000002" green="0.44380936030000001" blue="0.53799444439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +75,7 @@
                                     <action selector="hard:" destination="Y2F-8o-uxx" eventType="touchUpInside" id="NDc-6l-wbI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtl-ZU-RHz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtl-ZU-RHz">
                                 <rect key="frame" x="99.5" y="258" width="215" height="30"/>
                                 <color key="backgroundColor" red="0.30350759630000002" green="0.44380936030000001" blue="0.53799444439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="2 Players via Bluetooth">
@@ -86,6 +86,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nZ3-BU-nZZ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CWk-QH-veQ" firstAttribute="top" secondItem="dtl-ZU-RHz" secondAttribute="bottom" constant="18" id="0Ih-mO-qu8"/>
@@ -96,7 +97,7 @@
                             <constraint firstItem="dtl-ZU-RHz" firstAttribute="width" secondItem="3gr-gM-kas" secondAttribute="width" id="H2C-BP-Mlu"/>
                             <constraint firstItem="dtl-ZU-RHz" firstAttribute="top" secondItem="3gr-gM-kas" secondAttribute="bottom" constant="30" id="H4y-e2-cXC"/>
                             <constraint firstItem="nZ3-BU-nZZ" firstAttribute="bottom" secondItem="Htd-KT-6SN" secondAttribute="bottom" constant="-34" id="MbJ-Mm-tJE"/>
-                            <constraint firstItem="Htd-KT-6SN" firstAttribute="top" secondItem="nZ3-BU-nZZ" secondAttribute="top" constant="-44" id="O5H-Kb-r1e"/>
+                            <constraint firstItem="Htd-KT-6SN" firstAttribute="top" secondItem="nZ3-BU-nZZ" secondAttribute="top" constant="-54" id="O5H-Kb-r1e"/>
                             <constraint firstItem="Bxe-1e-r4C" firstAttribute="centerX" secondItem="nZ3-BU-nZZ" secondAttribute="centerX" id="PAj-o1-9q1"/>
                             <constraint firstItem="3gr-gM-kas" firstAttribute="top" secondItem="nZ3-BU-nZZ" secondAttribute="top" constant="154" id="SCs-gq-QoP"/>
                             <constraint firstItem="3gr-gM-kas" firstAttribute="centerX" secondItem="nZ3-BU-nZZ" secondAttribute="centerX" id="SGe-Dz-jJE"/>
@@ -109,7 +110,6 @@
                             <constraint firstItem="sXe-ei-sIm" firstAttribute="top" secondItem="Bxe-1e-r4C" secondAttribute="bottom" constant="20" id="u2Q-q4-AVd"/>
                             <constraint firstItem="CWk-QH-veQ" firstAttribute="top" secondItem="3gr-gM-kas" secondAttribute="bottom" constant="50" id="vW4-gM-OkJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nZ3-BU-nZZ"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="vW4-gM-OkJ"/>
@@ -146,6 +146,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JVY-fb-vo4" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="5" id="FfI-kq-FqH"/>
@@ -153,7 +154,6 @@
                             <constraint firstItem="JVY-fb-vo4" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="Yr8-vq-eG2"/>
                             <constraint firstItem="JVY-fb-vo4" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="ap0-KR-4EZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="LyF-7g-uzN"/>
